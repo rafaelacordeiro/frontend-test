@@ -1,0 +1,25 @@
+<div class="row col-lg-12 logo" ng-controller="MoviesController">
+  <div class="col-lg-12">
+    <div class="col-lg-3">
+      <img src="src/img/diamond.png" alt="logo-image" height="200" width="200" />
+    </div>
+    <div class="col-lg-9 search-top">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" ng-click="searchMovie()">Search</button>
+        </span>
+        <input type="text" class="form-control" placeholder="Search for name films...">
+      </div>
+    </div>
+  </div>
+  <div class="home">
+    <div class="col-lg-12 float-left">
+      <div ng-repeat="movie in movies.Search" class="col-lg-3 center" ng-click="">
+        <div class="">
+          <h5 class="">{{movie.Title}}</h5>
+        </div>
+        <img src="{{movie.Poster}}" height="300" width="200" class=""/>
+      </div>
+    </div>
+  </div>
+</div>
