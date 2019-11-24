@@ -1,39 +1,20 @@
 app.controller('MovieController', ['$scope', '$http', function($scope, $http) {
 
-    $scope.movie = {
-        "Title":"Galaxy",
-        "Year":"1986",
-        "Rated":"N/A",
-        "Released":"01 Jan 1986",
-        "Runtime":"91 min",
-        "Genre":"Action, Adventure, Sci-Fi",
-        "Director":"Brett Piper",
-        "Writer":"Brett Piper",
-        "Actors":"Matt Mitler, Denise Coward, Joe Gentissi, Bill MacGlaughlin",
-        "Plot":"After hijacking a space shuttle, a spy finds that the controls are malfunctioning and sees alien battleships approaching Earth. Many years later, when the arc of his flight path returns to earth, he finds the planet under alien domination.",
-        "Language":"English, French",
-        "Country":"USA",
-        "Awards":"N/A",
-        "Poster":"https://m.media-amazon.com/images/M/MV5BOTBhMGNhMTUtNTUwNS00NmYwLWI1ZmEtZWVlMTU4NDE3ZTFhXkEyXkFqcGdeQXVyMTQ2MjQyNDc@._V1_SX300.jpg",
-        "Ratings":[{
-          "Source":"Internet Movie Database",
-          "Value":"4.4/10"}
-        ],
-        "Metascore":"N/A",
-        "imdbRating":"4.4",
-        "imdbVotes":"191",
-        "imdbID":"tt0404977",
-        "Type":"movie",
-        "DVD":"N/A",
-        "BoxOffice":"N/A",
-        "Production":"N/A",
-        "Website":"N/A",
-        "Response":"True"
-    }
+    $scope.movie = [];
+    var detailFilm = "Baby";
 
-    actors();
-    genre();
-    director();
+    $http.get("http://www.omdbapi.com/?t=" + detailFilm + "&apikey=3238f869")
+    .then(function(response){ 
+        if (response.data.Response == "True") {
+            $scope.movie = response.data;
+            $scope.message = ""
+            actors();
+            genre();
+            director();
+        } else {
+            $scope.message = "Oops!!! Try again my friend."
+        }
+    });
 
     function actors (){
     	var listActor = $scope.movie.Actors.split(', ');

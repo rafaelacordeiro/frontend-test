@@ -17,7 +17,12 @@ app.controller('MoviesController', ['$scope', '$http',  function($scope, $http) 
 					}
 					$scope.movies = movies;
 				}
-				$scope.message = ""
+				if (movies.length !== 0) {
+					$scope.message = ""
+				} else {
+					$scope.message = "Oops!!! Try again my friend."
+				}
+				
 			} else {
 				$scope.message = "Oops!!! Try again my friend."
 			}

@@ -10,7 +10,22 @@
     <title>Diamond - App Name</title>
   </head>
   <body>
-    <div ng-view></div>
+    <div class="row col-lg-12 logo" ng-controller="MoviesController">
+      <div class="col-lg-12">
+        <div class="col-lg-3">
+          <img src="src/img/diamond.png" alt="logo-image" height="200" width="200" />
+        </div>
+        <div class="col-lg-9 search-top">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click="searchMovie(search)">Search</button>
+            </span>
+            <input type="text" class="form-control" ng-model="search" placeholder="Search for name films...">
+          </div>
+        </div>
+      </div>
+      <div ng-view></div>
+    </div>
 
     <!-- Modules -->
     <script src="src/js/app.js"></script>
