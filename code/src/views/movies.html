@@ -6,20 +6,23 @@
     <div class="col-lg-9 search-top">
       <div class="input-group">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button" ng-click="searchMovie()">Search</button>
+          <button class="btn btn-default" type="button" ng-click="searchMovie(search)">Search</button>
         </span>
-        <input type="text" class="form-control" placeholder="Search for name films...">
+        <input type="text" class="form-control" ng-model="search" placeholder="Search for name films...">
       </div>
     </div>
   </div>
   <div class="home">
     <div class="col-lg-12 float-left">
-      <div ng-repeat="movie in movies.Search" class="col-lg-3 center" ng-click="">
+      <div ng-repeat="movie in movies" class="col-lg-3 center" ng-click="">
         <div class="">
           <h5 class="">{{movie.Title}}</h5>
         </div>
         <img src="{{movie.Poster}}" height="300" width="200" class=""/>
       </div>
+    </div>
+    <div class="center">
+      <h1>{{message}}</h1>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-app.controller('MovieController', ['$scope', function($scope) {
+app.controller('MovieController', ['$scope', '$http', function($scope, $http) {
 
     $scope.movie = {
         "Title":"Galaxy",
