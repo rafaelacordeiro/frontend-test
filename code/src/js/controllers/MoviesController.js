@@ -1,4 +1,5 @@
-app.controller('MoviesController', ['$scope', '$http',  function($scope, $http) {
+app.controller('MoviesController', ['$scope', '$http', '$location', '$rootScope', 
+function($scope, $http, $location, $rootScope) {
 
     $scope.searchMovie = function(search) {
 
@@ -22,13 +23,18 @@ app.controller('MoviesController', ['$scope', '$http',  function($scope, $http) 
 				} else {
 					$scope.message = "Oops!!! Try again my friend."
 				}
-				
 			} else {
 				$scope.message = "Oops!!! Try again my friend."
 			}
+			$scope.search = "";
 		});
 
 	}
+
+	$rootScope.detail = function (imdbID) {
+        var prevUrl = "/movie" + imdbID;
+        $location.path(prevUrl);
+    };
 
 }]);
 

@@ -6,7 +6,7 @@ app.config(function($routeProvider) {
 		templateUrl: 'src/views/movies.html',
 		controller: 'MoviesController'
 	})
-	.when('/movie', {
+	.when('/movie:imdbID', {
 		templateUrl: 'src/views/movie.html',
 		controller: 'MovieController'
 	})

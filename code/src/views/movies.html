@@ -1,8 +1,8 @@
 <div class="home search-top">
   <div class="col-lg-12 float-left">
-    <div ng-repeat="movie in movies" class="col-lg-3 center" ng-click="">
-      <div class="">
-        <h5 class="">{{movie.Title}}</h5>
+    <div ng-repeat="movie in movies" class="col-lg-3 center" ng-click="detail(movie.imdbID)">
+      <div>
+        <h5>{{movie.Title}}</h5>
       </div>
       <img src="{{movie.Poster}}" height="300" width="200" class=""/>
     </div>

@@ -1,9 +1,9 @@
-app.controller('MovieController', ['$scope', '$http', function($scope, $http) {
+app.controller('MovieController', ['$scope', '$http', '$location', '$rootScope', '$routeParams', 
+function($scope, $http, $location, $rootScope, $routeParams  ) {
 
     $scope.movie = [];
-    var detailFilm = "Baby";
 
-    $http.get("http://www.omdbapi.com/?t=" + detailFilm + "&apikey=3238f869")
+    $http.get("http://www.omdbapi.com/?i=" + $routeParams.imdbID + "&apikey=3238f869")
     .then(function(response){ 
         if (response.data.Response == "True") {
             $scope.movie = response.data;
@@ -36,6 +36,16 @@ app.controller('MovieController', ['$scope', '$http', function($scope, $http) {
 		  	$scope.movie.directors = listDirector;
 		}
     }
+
+    var history = [];
+    $rootScope.$on('$routeChangeSuccess', function() {
+        history.push($location.$$path);
+    });
+
+    $rootScope.back = function () {
+        var prevUrl = history.length > 1 ? history.splice(-2)[0] : "/";
+        $location.path(prevUrl);
+    };
 
 }]);
 
