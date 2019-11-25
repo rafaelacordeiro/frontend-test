@@ -1,45 +1,37 @@
-<div class="movie" ng-controller="MovieController">
-  <div class="row my-5">
-    <div class="col col-lg-12 col-sm-8">
-      <button type="button" class="btn button-primary float-left search-top" ng-click="back()">Go Back</button>
-    </div>
+<div class="row" ng-controller="MovieController">
+  <div class="col-md-12 button-back top-20">
+    <button type="button" class="btn button-primary" ng-click="back()">Go Back</button>
   </div>
-  <div class="col-sm-8">
-    <div class="col-sm-4">
-      <div class="col">
-        <h1>{{movie.Title}}</h1>
-      </div>
+  <div class="col-sm-8 highlight top-20">
+    <h1>{{movie.Title}}</h1>
+    <div class="col-sm-12">
+      <h3>Plot</h3>
+      <span>{{movie.Plot}}</span>
     </div>
-    <div class="text-left mb-4">
-      <div class="col-sm-12">
-        <h3>Plot</h3>
-        <span>{{movie.Plot}}</span>
-      </div>
-    </div>
-    <div class="text-left">
+    <div class="col-sm-12">
       <div class="col-sm-4">
         <h3>Cast</h3>
-        <ul class="pl-3">
+        <ul>
           <li ng-repeat="actor in movie.actors">{{actor}}</li>
         </ul>
       </div>
       <div class="col-sm-4">
         <h3>Genre</h3>
-        <ul class="pl-3">
+        <ul>
           <li ng-repeat="genre in movie.genres">{{genre}}</li>
         </ul>
       </div>
       <div class="col-sm-4">
         <h3>Director</h3>
-        <ul class="pl-3">
+        <ul>
           <li ng-repeat="director in movie.directors">{{director}}</li>
         </ul>
       </div>
     </div>
   </div>
   <div>
-    <div class="col-sm-4">
-      <img src="{{movie.Poster}}" class=""/>
+    <div class="col-sm-4 top-20 poster">
+      <img src="{{movie.Poster}}"/>
     </div>
   </div>  
 </div>

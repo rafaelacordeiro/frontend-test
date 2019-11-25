@@ -1,0 +1,47 @@
+$color-highlight: #ff9f1c;
+$color-active: #428bca;
+$color-negative: #53489c;
+$color-dark: #0a1014;
+$color-grey: #1b2329;
+$color-mid-grey: #353f4c;
+$color-light-grey: #7a8c99;
+$color-white: #fff;
+
+$font-family: "Roboto";
+$font-default-color: #ffffff;
+$font-secondary-color: #7a8c99;
+$font-disabled-color: #353f4c;
+$font-highlight-color: #ff9f1c;
+$font-active-color: #428bca;
+$font-negative-color: #53489c;
+
+#application {
+  font-family: $font-family;
+  margin-top: 50px;
+  font-size: 16px;
+  color: #2c3e50;
+}
+.highlight {
+  background-color: $color-highlight;
+  color: $color-dark;
+}
+.button-primary {
+  border-color: $color-highlight;
+  color: $color-dark;
+  &:hover {
+    background-color: $color-highlight;
+    color: $color-white;
+  }
+}
+.top {
+	margin-top: 40px;
+}
+.top-20 {
+	margin-top: 20px;
+}
+.button-back {
+	margin-left: -0.999999%;
+}
+.poster {
+	text-align: center;
+}
